@@ -27,8 +27,10 @@ public class UserRegistration {
         };
         System.out.println(isValidEmail.validate("^[a-z]+[+-_.]*[a-z]*[@][a-z]+[.][a-z]{2,4}[.]*([a-z]{2})*$",
                 "sirin.sha@gmail.com"));
-
-
+        Validation isValidPassword1 = (pattern, password) -> {
+            return "Password rule is " + Pattern.compile(pattern).matcher(password).matches();
+        };
+        System.out.println(isValidPassword1.validate("^[0-9a-zA-Z!,@#$&*().]{8,}$", "Sirin@"));
 
     }
 }
